@@ -356,7 +356,7 @@
     <link href="http://www.yanjiazhen.com/2015/04/PHP-APACHE-403.html"/>
     <id>http://www.yanjiazhen.com/2015/04/PHP-APACHE-403.html</id>
     <published>2015-04-15T16:00:00.000Z</published>
-    <updated>2017-07-31T06:19:35.000Z</updated>
+    <updated>2017-08-10T09:30:03.000Z</updated>
     
     <content type="html"><![CDATA[<p></p><p>HTTP 错误 403 - 禁止访问，即403 Forbidden：You don’t have permission to access / on this server.</p><p></p>
 <p></p><p>可能是权限不足引起的问题。</p><p></p>
@@ -376,7 +376,7 @@
     
     </summary>
     
-      <category term="php和mysql" scheme="http://www.yanjiazhen.com/categories/php%E5%92%8Cmysql/"/>
+      <category term="Apache" scheme="http://www.yanjiazhen.com/categories/Apache/"/>
     
     
       <category term="apache" scheme="http://www.yanjiazhen.com/tags/apache/"/>
