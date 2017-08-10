@@ -250,7 +250,7 @@
     <link href="http://www.yanjiazhen.com/2015/08/zepto-function.html"/>
     <id>http://www.yanjiazhen.com/2015/08/zepto-function.html</id>
     <published>2015-08-02T15:03:11.000Z</published>
-    <updated>2017-07-31T06:35:32.000Z</updated>
+    <updated>2017-08-10T09:25:15.000Z</updated>
     
     <content type="html"><![CDATA[<p>今天将zepto对外提供方法都看了一遍，对其中的一些方法做了笔记</p>
 <h2 id="each-collection-function-index-item-…"><a href="#each-collection-function-index-item-…" class="headerlink" title="$.each(collection, function(index, item){ … })"></a>$.each(collection, function(index, item){ … })</h2><p>遍历对象/数组，在每个元素上执行回调，源码实现<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">$.each = <span class="function"><span class="keyword">function</span>(<span class="params">elements, callback</span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> i, key;</div><div class="line">	<span class="comment">//数组、类数组</span></div><div class="line">	<span class="keyword">if</span> (likeArray(elements)) &#123;        </div><div class="line">		<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; elements.length; i++)</div><div class="line">			<span class="keyword">if</span> (callback.call(elements[i], i, elements[i]) === <span class="literal">false</span>) <span class="keyword">return</span> elements</div><div class="line">	<span class="comment">//对象</span></div><div class="line">	&#125; <span class="keyword">else</span> &#123;</div><div class="line">		<span class="keyword">for</span> (key <span class="keyword">in</span> elements)       </div><div class="line">	    	<span class="keyword">if</span> (callback.call(elements[key], key, elements[key]) === <span class="literal">false</span>) <span class="keyword">return</span> elements</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> elements</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
@@ -279,9 +279,7 @@
     
     </summary>
     
-      <category term="zepto" scheme="http://www.yanjiazhen.com/categories/zepto/"/>
-    
-      <category term="JavaScript" scheme="http://www.yanjiazhen.com/categories/zepto/javascript/"/>
+      <category term="JavaScript" scheme="http://www.yanjiazhen.com/categories/javascript/"/>
     
     
       <category term="zepto" scheme="http://www.yanjiazhen.com/tags/zepto/"/>
@@ -293,7 +291,7 @@
     <link href="http://www.yanjiazhen.com/2015/08/zepto-init.html"/>
     <id>http://www.yanjiazhen.com/2015/08/zepto-init.html</id>
     <published>2015-08-01T14:18:17.000Z</published>
-    <updated>2017-07-31T06:24:07.000Z</updated>
+    <updated>2017-08-10T09:25:08.000Z</updated>
     
     <content type="html"><![CDATA[<p>$()方法根据传入参数的selector来执行选择器、创建dom、执行ready等操作</p>
 <p>##常用操作<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 选择器</span></div><div class="line">$(<span class="string">'div'</span>);</div><div class="line"><span class="comment">// 创建元素</span></div><div class="line">$(<span class="string">'&lt;div&gt;&lt;/div&gt;'</span>);</div><div class="line"><span class="comment">// 创建元素，添加属性</span></div><div class="line">$(<span class="string">'&lt;p&gt;&lt;/p&gt;'</span>, &#123;</div><div class="line">	text: <span class="string">'hello'</span>,</div><div class="line">	id: <span class="string">'greeting'</span>,</div><div class="line">	css: &#123; color: #0af &#125;</div><div class="line">&#125;);</div><div class="line"><span class="comment">// 当页面载入完毕时执行</span></div><div class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="comment">// code</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
@@ -315,9 +313,7 @@
     
     </summary>
     
-      <category term="zepto" scheme="http://www.yanjiazhen.com/categories/zepto/"/>
-    
-      <category term="JavaScript" scheme="http://www.yanjiazhen.com/categories/zepto/javascript/"/>
+      <category term="JavaScript" scheme="http://www.yanjiazhen.com/categories/javascript/"/>
     
     
       <category term="JS" scheme="http://www.yanjiazhen.com/tags/js/"/>
@@ -331,7 +327,7 @@
     <link href="http://www.yanjiazhen.com/2015/08/learn-zepto-source-init.html"/>
     <id>http://www.yanjiazhen.com/2015/08/learn-zepto-source-init.html</id>
     <published>2015-08-01T12:57:21.000Z</published>
-    <updated>2017-07-31T06:28:44.000Z</updated>
+    <updated>2017-08-10T09:25:30.000Z</updated>
     
     <content type="html"><![CDATA[<p>Zepto是面向高级浏览器的js框架，API与jQuery基本一致，体积小，非常适合在移动端使用</p>
 <p>##结构<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> Zepto = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line"></div><div class="line">    <span class="comment">// 定义内部变量和工具方法</span></div><div class="line">    <span class="keyword">var</span> <span class="literal">undefined</span>, key, $, classList, emptyArray = [], concat = emptyArray.concat,</div><div class="line">        ...</div><div class="line">        zepto = &#123;&#125;</div><div class="line"></div><div class="line">	<span class="comment">// zepto对象构造函数</span></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">Z</span>(<span class="params">dom, selector</span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> i, len = dom ? dom.length : <span class="number">0</span></div><div class="line">        <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; len; i++) <span class="keyword">this</span>[i] = dom[i]</div><div class="line">        <span class="keyword">this</span>.length = len</div><div class="line">        <span class="keyword">this</span>.selector = selector || <span class="string">''</span></div><div class="line">    &#125;</div><div class="line"></div><div class="line">	<span class="comment">// 将dom包装成zepto对象</span></div><div class="line">    zepto.Z = <span class="function"><span class="keyword">function</span>(<span class="params">dom, selector</span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Z(dom, selector);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">	<span class="comment">// 根据selector来执行选择器、创建dom、执行ready等操作</span></div><div class="line">    zepto.init = <span class="function"><span class="keyword">function</span>(<span class="params">selector, context</span>) </span>&#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">	<span class="comment">// 入口函数</span></div><div class="line">    $ = <span class="function"><span class="keyword">function</span>(<span class="params">selector, context</span>)</span>&#123;</div><div class="line">        <span class="keyword">return</span> zepto.init(selector, context)</div><div class="line">    &#125;</div><div class="line"></div><div class="line">	<span class="comment">// 实例方法</span></div><div class="line">    $.fn = &#123;</div><div class="line">        concat: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;,</div><div class="line">        map: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;,</div><div class="line">        slice: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;,</div><div class="line">        ready: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;,</div><div class="line">        get: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;,</div><div class="line">        ...</div><div class="line">    &#125;</div><div class="line"></div><div class="line"> 	<span class="comment">// 原型执行</span></div><div class="line">    zepto.Z.prototype = Z.prototype = $.fn;</div><div class="line"></div><div class="line">	<span class="comment">// 将内部定义的zepto对象挂载到$下面</span></div><div class="line">    $.zepto = zepto;</div><div class="line"></div><div class="line">&#125;)();</div><div class="line"><span class="built_in">window</span>.Zepto = Zepto</div><div class="line"><span class="built_in">window</span>.$ === <span class="literal">undefined</span> &amp;&amp; (<span class="built_in">window</span>.$ = Zepto)</div></pre></td></tr></table></figure></p>
@@ -348,9 +344,7 @@
     
     </summary>
     
-      <category term="zepto" scheme="http://www.yanjiazhen.com/categories/zepto/"/>
-    
-      <category term="JavaScript" scheme="http://www.yanjiazhen.com/categories/zepto/javascript/"/>
+      <category term="JavaScript" scheme="http://www.yanjiazhen.com/categories/javascript/"/>
     
     
       <category term="zepto" scheme="http://www.yanjiazhen.com/tags/zepto/"/>
@@ -626,7 +620,7 @@ f1.x  =&gt; <span class="string">"hello"</span>;   <span class="comment">// 删�
     <link href="http://www.yanjiazhen.com/2015/03/ZeroClipboard.html"/>
     <id>http://www.yanjiazhen.com/2015/03/ZeroClipboard.html</id>
     <published>2015-03-09T04:44:30.000Z</published>
-    <updated>2017-07-31T06:33:09.000Z</updated>
+    <updated>2017-08-10T09:24:54.000Z</updated>
     
     <content type="html"><![CDATA[<p>查看demo —&gt; <a class="demo" href="/demo/clipboard.html" target="_blank">剪贴板_ZeroClipboard</a></p>
 <p>##1.原理<br>ZeroClipboard利用透明的flash让其漂浮在复制按钮之上，将需要复制的内容传入flash，在通过flash的复制功能把传入的内容复制到剪切板。</p>
@@ -642,9 +636,7 @@ f1.x  =&gt; <span class="string">"hello"</span>;   <span class="comment">// 删�
     
     </summary>
     
-      <category term="jQuery" scheme="http://www.yanjiazhen.com/categories/jQuery/"/>
-    
-      <category term="JavaScript" scheme="http://www.yanjiazhen.com/categories/jQuery/javascript/"/>
+      <category term="JavaScript" scheme="http://www.yanjiazhen.com/categories/javascript/"/>
     
     
       <category term="jQuery" scheme="http://www.yanjiazhen.com/tags/jQuery/"/>
@@ -680,7 +672,7 @@ f1.x  =&gt; <span class="string">"hello"</span>;   <span class="comment">// 删�
     <link href="http://www.yanjiazhen.com/2015/02/jQuery-ready.html"/>
     <id>http://www.yanjiazhen.com/2015/02/jQuery-ready.html</id>
     <published>2015-02-16T13:47:17.000Z</published>
-    <updated>2017-07-31T06:34:21.000Z</updated>
+    <updated>2017-08-10T09:24:16.000Z</updated>
     
     <content type="html"><![CDATA[<p><script type="text/jacascript"><br>window.onload = function () {<br>    alert(1);<br>};<br></script></p>
 <h2 id="1-load和ready"><a href="#1-load和ready" class="headerlink" title="1. load和ready"></a>1. load和ready</h2><p>load: 页面所有东西加载完毕之后触发、包括图片等等<br><br>ready： DOM加载完毕触发</p>
@@ -697,9 +689,7 @@ f1.x  =&gt; <span class="string">"hello"</span>;   <span class="comment">// 删�
     
     </summary>
     
-      <category term="jQuery" scheme="http://www.yanjiazhen.com/categories/jQuery/"/>
-    
-      <category term="JavaScript" scheme="http://www.yanjiazhen.com/categories/jQuery/javascript/"/>
+      <category term="JavaScript" scheme="http://www.yanjiazhen.com/categories/javascript/"/>
     
     
       <category term="jQuery" scheme="http://www.yanjiazhen.com/tags/jQuery/"/>
