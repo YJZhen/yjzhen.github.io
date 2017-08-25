@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.yanjiazhen.com/"/>
-  <updated>2017-08-21T07:10:31.000Z</updated>
+  <updated>2017-08-25T01:36:34.000Z</updated>
   <id>http://www.yanjiazhen.com/</id>
   
   <author>
@@ -20,13 +20,13 @@
     <link href="http://www.yanjiazhen.com/2017/08/hexo-github.html"/>
     <id>http://www.yanjiazhen.com/2017/08/hexo-github.html</id>
     <published>2017-08-10T05:13:11.000Z</published>
-    <updated>2017-08-21T07:10:31.000Z</updated>
+    <updated>2017-08-25T01:36:34.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h2><p>之前一直都是使用Jekyll+GitHub搭建个人博客，但由于Jekyll是基于Ruby实现，搭建本地服务比较麻烦，我个人又对Ruby不熟悉，因此就转用Hexo搭建博客了。Hexo是基于NodeJS实现的，相对于Jekyll，实现Hexo的调试环境就简单许多。</p>
 <h2 id="二、配置环境和创建项目"><a href="#二、配置环境和创建项目" class="headerlink" title="二、配置环境和创建项目"></a>二、配置环境和创建项目</h2><p><code>注：使用Hexo搭建博客前，电脑必须搭建好Git和NodeJS的环境；关于Git和NodeJS的安装方法，本文章不做介绍</code></p>
 <h3 id="1-安装Hexo"><a href="#1-安装Hexo" class="headerlink" title="1.安装Hexo"></a>1.安装Hexo</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo npm install -g hexo</div></pre></td></tr></table></figure>
 <p>安装完后就可以初始化一个项目</p>
-<h3 id="2-初始化项目"><a href="#2-初始化项目" class="headerlink" title="2.初始化项目"></a>2.初始化项目</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo hexo new projectname</div></pre></td></tr></table></figure>
+<h3 id="2-初始化项目"><a href="#2-初始化项目" class="headerlink" title="2.初始化项目"></a>2.初始化项目</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo hexo init projectname</div></pre></td></tr></table></figure>
 <p>目录结构：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">.</div><div class="line">├── node_modules             // 依赖</div><div class="line">├── scaffolds                // 脚手架、骨架</div><div class="line">├── source                   // 资源文件夹</div><div class="line">│   └── _posts               // 新建的文章保存在这里</div><div class="line">├── themes                   // 主题文件夹</div><div class="line">│   └── landscape            // 默认主题</div><div class="line">├── _config.yml              // 全局配置文件</div><div class="line">├── package.json             // 项目的参数和所依赖插件</div></pre></td></tr></table></figure>
 <h4 id="config-yml"><a href="#config-yml" class="headerlink" title="_config.yml"></a>_config.yml</h4><p>全局配置文件；网站的名称、副标题、描述、作者、语言、主题、时间格式、URL、端口、代码高亮、部署等等参数</p>
@@ -35,13 +35,17 @@
 <h3 id="4-启动服务预览"><a href="#4-启动服务预览" class="headerlink" title="4.启动服务预览"></a>4.启动服务预览</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
 <p>或者<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo s</div></pre></td></tr></table></figure></p>
 <p>启动服务后，在浏览器输入 <code>http://localhost:4000/</code> 即可访问。默认情况下，Hexo服务启动的端口为4000，若端口被占用或想使用其他端口启动，则运行命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server -p 端口</div></pre></td></tr></table></figure></p>
-<p>如果不想每次启动时都输入端口，可以全局配置文件 <code>_config.yml</code> 中配置默认端口<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="attr">server:</span></div><div class="line"><span class="attr">  port:</span> <span class="number">8800</span>    <span class="comment"># 配置默认端口</span></div></pre></td></tr></table></figure></p>
+<p>如果不想每次启动时都输入端口，可以全局配置文件 <code>_config.yml</code> 中配置默认端口</p>
+<p><code>修改 _config.yml 配置文件时，冒号 : 和右边的直之间要有一个空格</code></p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="attr">server:</span></div><div class="line"><span class="attr">  port:</span> <span class="number">8800</span>    <span class="comment"># 配置默认端口</span></div></pre></td></tr></table></figure>
 <p><img src="http://oo9ubqgvv.bkt.clouddn.com/yjblogs-20178151452.png" alt=""></p>
 <p>上图为浏览结果，我个人觉得默认主题不好看；因此，我找了另一个主题。</p>
 <h2 id="三、修改主题"><a href="#三、修改主题" class="headerlink" title="三、修改主题"></a>三、修改主题</h2><p>我的个人博客使用了 <code>maupassant</code> 主题，因此，我们也做这个主题做案例吧。 <br><br>主题地址：<a href="https://github.com/tufu9441/maupassant-hexo" target="_blank" rel="external">https://github.com/tufu9441/maupassant-hexo</a> <br><br>使用命令行进入 <code>themes</code> 文件夹，把主题克隆到该目录下，执行命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git clone https://github.com/tufu9441/maupassant-hexo</div></pre></td></tr></table></figure></p>
 <p><img src="http://oo9ubqgvv.bkt.clouddn.com/yjblogs-2017815144912.png" alt=""></p>
 <p>接下来就需要安装渲染器（强烈建议使用cnpm或其他国内镜像安装）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-renderer-jade@0.3.0 --save</div><div class="line">$ npm install hexo-renderer-sass --save</div></pre></td></tr></table></figure></p>
-<p>然后我们打开项目根目录下的 <code>_config.yml</code> 全局配置文件，找到 <code>theme</code> 配置项，把 <code>theme: landscape</code> 设置为 <code>theme: maupassant</code><br><figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attr">theme:</span> <span class="string">maupassant</span></div></pre></td></tr></table></figure></p>
+<p>然后我们打开项目根目录下的 <code>_config.yml</code> 全局配置文件，找到 <code>theme</code> 配置项，把 <code>theme: landscape</code> 设置为 <code>theme: maupassant</code></p>
+<p><code>隆下来的主题文件夹为 maupassant-hexo 我已将它重命名 maupassant</code></p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attr">theme:</span> <span class="string">maupassant</span></div></pre></td></tr></table></figure>
 <p>修改完主题配置，需要执行 <code>hexo g</code> 命令重新生成静态HTML，然后再执行 <code>hexo s</code> 启动服务</p>
 <p><img src="http://oo9ubqgvv.bkt.clouddn.com/yjblogs-2017815152743.png" alt=""></p>
 <p>666666<br><br>这个主题好看多了</p>
